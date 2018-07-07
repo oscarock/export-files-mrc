@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ExportFileController extends Controller
 {
     public function createFiles(){
-      $issues = Issue::where('tenant_id', '=' , 6)->get();
+      $issues = Issue::where('tenant_id', '=' , 341)->get();
       foreach ($issues as $issue) {
         $file_content = '"'.$issue->name."\r\n"
                            .$issue->description."\r\n"
