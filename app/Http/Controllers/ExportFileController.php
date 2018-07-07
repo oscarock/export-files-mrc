@@ -20,9 +20,9 @@ class ExportFileController extends Controller
       }
        
       $files = glob(storage_path('app/'.$issue->tenant_id));
-      Zipper::zip(storage_path('app/MARC-export.zip'))->folder($issue->tenant_id)->add($files);
+      Zipper::zip(public_path('MARC-export.zip'))->folder($issue->tenant_id)->add($files);
       return response()->json([
-        'download_zip' =>  storage_path('app/MARC-export.zip')
+        'download_zip' =>  "http://".$_SERVER["HTTP_HOST"]."/MARC-export.zip"
       ]);
     }
 }

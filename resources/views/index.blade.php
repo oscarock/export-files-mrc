@@ -18,8 +18,9 @@
                     success: function (data) {
                         $("#prg .progress-bar").css({ "width": "100%" }).removeClass("active").html("100%");
                         $("#result").html(data);
-                        location.href = data.download_zip
-                        console.log(data.download_zip)
+                        //window.location.href = data.download_zip
+                        $("#load_link").attr("href", data.download_zip);
+                        $("#load_link").show()
                     }, error: function () {
                         alert("error");
                     }
@@ -42,7 +43,9 @@
     	</div>
     	<div class="row">
     	  <div class="col-md-12">
-    	  	<input type="button" class="btn btn-primary btn-block" value="Exportar" id="docstatus" />
+    	  	<input type="button" class="btn btn-success btn-block" value="Exportar" id="docstatus" />
+    	  	<br>
+    	  	<a href="" class="btn btn-warning btn-block" id="load_link" style="display: none;">Descargar Exportacion</a>
     	  </div>
     	</div>
    </div>
