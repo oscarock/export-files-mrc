@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/', 'ExportFileController@createFiles');
+
+Route::get('/',function(){
+	return view('index');
+});
+
+Route::get('createFiles', 'ExportFileController@createFiles');
